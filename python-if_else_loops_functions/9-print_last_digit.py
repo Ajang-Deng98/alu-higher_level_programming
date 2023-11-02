@@ -1,8 +1,8 @@
-
 #!/usr/bin/env python3
-print_last_digit = _import_('9-print_last_digit').print_last_digit
-
-print_last_digit(98)
-print_last_digit(0)
-r = print_last_digit(-1024)
-print(r)
+def print_last_digit(number):
+    if number < 0:
+        last_num = (-number % 10)
+    elif number >= 0:
+        last_num = number % 10
+    print("{:d}".format(last_num), end="")
+    return last_num
