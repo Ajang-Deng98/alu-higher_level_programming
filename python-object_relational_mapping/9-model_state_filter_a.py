@@ -1,18 +1,6 @@
 #!/usr/bin/python3
 """ prints the first State object from the database hbtn_0e_6_usa
 """
-<<<<<<< HEAD
-<<<<<<< HEAD
-Prints the first State object from the database hbtn_0e_6_usa
-"""
-=======
-Writes out the first State object from the database hbtn_0e_6_usa
-"""
-
-
->>>>>>> origin/main
-=======
->>>>>>> 0c882bccf4493cdcf1f1e90e79e19d16f0ad32fa
 import sys
 from model_state import Base, State
 from sqlalchemy import (create_engine)
@@ -25,8 +13,5 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    instance = session.query(State).first()
-    if instance is None:
-        print("Nothing")
-    else:
+    for instance in session.query(State).filter(State.name.like('%a%')):
         print(instance.id, instance.name, sep=": ")
