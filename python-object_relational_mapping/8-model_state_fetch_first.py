@@ -1,7 +1,14 @@
 #!/usr/bin/python3
 """
+<<<<<<< HEAD
 Prints the first State object from the database hbtn_0e_6_usa
 """
+=======
+Writes out the first State object from the database hbtn_0e_6_usa
+"""
+
+
+>>>>>>> origin/main
 import sys
 from model_state import Base, State
 from sqlalchemy import create_engine
